@@ -137,7 +137,7 @@ export class AppComponent  implements OnInit{
  * 
  * 
  * CURSO: https://www.youtube.com/watch?v=EVF1xnDWlV4&list=PL_9MDdjVuFjEscTzZSLo6upnX1AbHj-dl&index=5
- * EMPEZAR VIDEO: 14
+ * EMPEZAR VIDEO: 17
  * Importante ver datos de navegacion en angular
  *  
  */
