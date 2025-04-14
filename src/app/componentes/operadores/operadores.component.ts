@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { log, timeStamp } from 'console';
-import { concat, delay, filter, interval, map, merge, Observable, of, single, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
+import { concat, delay, filter, interval, map, merge, Observable, of, single, startWith, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
 import { User } from '../../interfaceDatos/user.interface';
 import { BuscadorService } from '../../servicios/buscador.service';
 
@@ -97,7 +97,16 @@ export class OperadoresComponent implements OnInit, OnDestroy{
       tap(res => console.log('Operador single(): ', res))
     ).subscribe()
 
+    // Para el operador startWith()
+    this.numbers.pipe(
+      startWith(0),
+      tap(res => console.log('Operador single(): ', res))
+    ).subscribe()
+
   }
+
+  // METODOS DEL COMPONENTE ********************************************************************
+  // *******************************************************************************************
 
   // metodo recibe un evento en este caso cuando escribes en el input del buscador 
   // obtenemos lo que se escribe y lo emitimos con this.searchTerm$.next(element.value)
