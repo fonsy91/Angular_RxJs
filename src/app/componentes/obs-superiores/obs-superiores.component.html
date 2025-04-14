@@ -1,0 +1,35 @@
+<h3>Observables de orden superior</h3>
+<p>
+    Son aquellos que operan sobre otros observables, son utiles para crar nuevos
+    observables a partir de un observable o incluso para transdormar los datos emitidos por un observable.
+    Son observables que emiten otros observables como valores. En otras palabras, un observable de orden superior 
+    es un flujo de datos (observable) cuyos valores son a su vez otros observables.
+    Estos observables son especialmente útiles cuando necesitas trabajar con flujos de datos anidados o asincrónicos, 
+    ya que permiten manejar escenarios complejos de manera más estructurada y declarativa.
+</p>
+<p>
+    Un observable de orden superior es simplemente un observable que emite otro observable en lugar de emitir valores directamente. Por ejemplo:
+</p>
+<ul>
+    <li>Un observable puede emitir una serie de solicitudes HTTP (cada solicitud es un observable).</li>
+    <li>Un observable puede emitir eventos de múltiples fuentes (cada fuente es un observable).</li>
+</ul>
+<p>
+    Se suelen utilizar para el manejo de solicitudes HTTP basadas en eventos
+    (como clics o entradas de usuario), puedes usar observables de orden superior para manejar las respuestas de manera eficiente.
+    Para el flujo de datos anidado si tienes un flujo de datos que depende de otro flujo (por ejemplo, obtener detalles de un usuario 
+    después de recibir una lista de usuarios), los observables de orden superior te permiten encadenar estos flujos de manera limpia.
+</p>
+
+<ng-container *ngIf="data | async as item">
+    <ul>
+        <strong>{{item.name}}</strong>
+    </ul>
+</ng-container>
+
+<p>
+    Esto lo que hace es una petion HTTP a una API y devolvemos el resultado de los nombres en 
+    forma de lista después generamos un numero aleatorio del 1 al 20 cogemos ese id y volvemos a realizar 
+    una llamada a la api para obtener un personaje en concreto y de el solo mostramos en pantalla el nombre 
+    resaltado de color azul arriba.
+</p>

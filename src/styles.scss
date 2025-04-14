@@ -1,0 +1,51 @@
+/* Estilo para el contenedor principal */
+.container {
+    max-width: 1400px; /* Elimina el límite de ancho máximo */
+    margin: 0 auto; /* Centra el contenido horizontalmente */
+    padding: 20px 40px; /* Reduce el margen interno lateral al mínimo */
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  }
+  
+  /* Estilos generales */
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fondo claro para la página */
+    color: #333; /* Color de texto oscuro */
+  }
+  
+  h1 {
+    text-align: center; /* Centra el título principal */
+    color: #007BFF; /* Color azul para destacar */
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    color: #555; /* Color gris oscuro para subtítulos */
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 15px;
+    text-align: justify; /* Justifica el texto para una mejor apariencia */
+  }
+  
+  ul {
+    list-style-type: disc; /* Usa viñetas para la lista */
+    margin-left: 20px; /* Añade margen izquierdo para la lista */
+    margin-bottom: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+    font-size: 1rem;
+  }
+  
+  strong {
+    color: #007BFF; /* Resalta términos clave en azul */
+  }

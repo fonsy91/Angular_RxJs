@@ -1,0 +1,36 @@
+<div class="container">
+
+  <h1>LIBRERIA RxJs</h1>
+
+  <p>
+    La programación reactiva es un paradigma de programación en el cual los datos fluyen a través de un sistema, en lugar de ser manejados por eventos puntuales. Se basa en la idea de que los datos son un flujo continuo que cambia con el tiempo, y que el sistema debe reaccionar a estos cambios de manera eficiente y escalable.
+  </p>
+
+  <ul>
+    <li><strong>Observables:</strong> Son la base de la programación reactiva. Permiten representar un flujo de datos a lo largo del tiempo. Los observables emiten datos a medida que cambian, y los programas pueden "suscribirse" a estos observables para recibir y procesar los datos.</li>
+    <li><strong>Operadores:</strong> Son funciones que se pueden aplicar a los observables para transformar y filtrar los datos que fluyen a través del sistema. Además, permiten realizar operaciones complejas con los datos, como transformaciones, filtrado, agrupamiento y agregado.</li>
+    <li><strong>Observadores:</strong> Son los que "escuchan" a los observables y realizan alguna acción cada vez que hay un cambio en los datos.</li>
+    <li><strong>Suscriptores:</strong> Son los que conectan los observables y los observadores, permitiendo que los datos fluyan a través del sistema.</li>
+    <li><strong>Asincronía:</strong> La programación reactiva permite trabajar con flujos de datos asíncronos de manera más fácil y predecible.</li>
+  </ul>
+
+  <h3>Patron observer</h3>
+  <p>
+    Proporciona una forma estandarizada de recorrer un objeto de forma secuencial,
+    este patron se divide en dos elemento: el iterador y el contenedor.
+  </p>
+
+  <h3>Patron Iterator</h3>
+  <p>
+    Es un objeto que proporciona una interfaz para recorrer un contenedor de forma secuencial
+    El contenedor: es un objeto que contiene los elementos que se van a recorrer.
+  </p>
+
+  <!--Componente de observables frios y calientes-->
+  <app-obs-frio-caliente></app-obs-frio-caliente>
+  <!--Componente de observables de orden superior-->
+  <app-obs-superiores></app-obs-superiores>
+  <!--Componente de operadores RxJs-->
+  <app-operadores></app-operadores>
+
+</div>

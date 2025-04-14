@@ -1,0 +1,114 @@
+<h3>Operadores en RxJs</h3>
+<p>
+    Son funciones que permiten manipular y transformar flujos de datos observables 
+    estos operadores incluyen map, filter, reduce, merge, concat y mas. Vamos a usar estas funciones a 
+    traves del pipe que nos permite encadenar varios operadores en una sola llamada.
+</p>
+
+<ul>
+    <li><strong>map: </strong> este operador se usa para transformar los valores emitidos por un observable.
+    no trabaja con arrays sino que lo hace con flujos de datos asíncronos.</li>
+    <li><strong>filter: </strong> este operador es utilizado para filtrar los valores emitidos por un observable, 
+    permitiendo solo aquellos que cumplan con una condición especificada. Es decir, permite dejar pasar solo los 
+    elementos que cumplen con un criterio específico y descartar los que no lo cumplen.</li>
+    <li><strong>merge: </strong> este operador es utilizado para combinar múltiples observables en un solo 
+    observable que emite los valores de cada uno de ellos de manera concurrente. Es decir, merge permite que 
+    varios observables emitan sus valores al mismo tiempo, sin esperar a que uno termine antes de comenzar 
+    con el siguiente.</li>
+    <li><strong>concat: </strong> este operador se utiliza para combinar múltiples observables en uno solo, 
+    pero emitirá los valores de cada observable uno después de otro, en secuencia, esperando que el observable 
+    anterior termine de emitir todos sus valores antes de comenzar con el siguiente.</li>
+</ul>
+
+<p>
+    La diferencia entre estos ultimos dos es que concat se ejecuta secuencialmente y espera a que el primer 
+    observable se complete antes de comenzar con el siguiente. Mientras que el operador merge emite cualquier
+    observable tan pronto este disponible. Los tipos de operadores se clasifican de la siguiente manera:
+</p>
+
+<ul>
+    <li><strong>Creacion: </strong>pueden crear un nuevo observable como puede ser of, from, interval etc...</li>
+    <li><strong>Transformacion: </strong>son operadores que transforman los valores emitidos puede ser map.</li>
+    <li><strong>Filtrado: </strong>son operadores que filtran los valores emitidos en base a una condicion puede ser filter.</li>
+    <li><strong>Combinacion: </strong>son operadores que combinan uno o mas observables como merge o concat.</li>
+    <li><strong>Agrupacion: </strong>son operadores que nos permiten agrupar los valores emitidos por un observable com group by</li>
+    <li><strong>Error handling: </strong>son operadores que nos permiten manejar errores.</li>
+    <li><strong>Terminal: </strong>son operadores que marcan el final de un observable.</li>
+</ul>
+
+<h4>Operador tap():</h4>
+<p>
+    Es un operador que nos permite ejecutar una accion cada vez que se emite un valor desde un observable. Es muy 
+    util para debbugear para ver que estamos recibiendo en ese observable.
+</p>
+
+<h4>Operador delay():</h4>
+<p>
+    Es un operador que retrasa la emision de elementos de la fuente observable por un tiempo de espera determinado
+    o hasta una fecha determinada.
+</p>
+
+<h4>Operador timestamp():</h4>
+<p>
+    Es un operador que nos permite añadir marcas temporales en cada uno de los valores emitidos, es util cuando queremos
+    saber cuando se ha emitido un valor cuando queremos medir el tiempo transcurrido entre dos emisiones.  
+</p>
+
+<h4>Operador map() (en mas profuncidad):</h4>
+<p>
+    Es un operador que nos permite transformar los datos emitidos por el observable fuente y podemos realizar tareas de conversion
+    de datos. 
+</p>
+
+<h4>Operador switchMap():</h4>
+<p>
+    Es un operador que nos permite cambiar a un nuevo observable cada vez que se emite un valor de un observable. Es 
+    util para cancelar operaciones en curso y comenzar una nueva operacion basada en el valor emitido mas recientemente.
+    Para probar este operador vamos a hacer un buscador que busque usuarios del archivo users-data.ts cada vez que el usuario 
+    introduzca un valor (en este caso el nombre de la persona a buscar por completo) en caso de que se equivoque y cambiara este 
+    operador cancelaria esa operacion y haria una nueva.
+</p>
+
+
+<div>
+    <form>
+      <label for="default-search">Search</label>
+      <div class="relative">
+        <input type="search" id="default-search" (input)="search($event)"
+          placeholder="Search..." required>
+        <button type="submit">Search</button>
+      </div>
+    </form>
+</div>
+
+<ng-container *ngIf="results$ | async as result">
+    <div>
+        {{result | json}}
+    </div>
+</ng-container>
+  
+<h4>Operador takeUntil():</h4>
+<p>
+    Es un operador que nos permite tomar solo un numero especifico de valores emitidos por un observable,
+    o tomar valores hasta que se emita un valor especifico de otro observable. Es util para cancelar una 
+    suscripcion a un observable cuando ocurre un evento especifico, o para limitar la cantidad de valores
+    que se procesan. En el ejemplo de abajo cuando hacemos clik en el boton stop se usa este operador y 
+    entonces cancela la suscripcion y el observable deja de emitir valores.
+</p>
+
+<div>
+    <span>
+      <button type="button" (click)="start()">Start</button>
+    </span>
+    <span>
+      <button type="button" (click)="stop()">Stop</button>
+    </span>
+    <span>Counter:{{counter}}</span>
+</div>
+
+<h4>Operador single():</h4>
+<p>
+    Es un operador que nos permite tomar solo un valor que cumpla con una condicion especifica (si no encuentra ese valor
+    devolvera un error) y luego completar el observable. Es util para recuperar un solo valor o para detectar un valor
+    especifico en un flujo de datos.
+</p>

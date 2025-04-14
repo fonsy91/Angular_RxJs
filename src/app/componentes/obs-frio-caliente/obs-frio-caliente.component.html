@@ -1,0 +1,36 @@
+<h3>Observable frio</h3>
+<p>
+    Son aquellos que no empiezan a emitir datos hasta que alguien se suscribe a ellos. Estos observables
+    son unicast se puede decir que el dataSource se crea y se activa dentro del observable
+  </p>
+  <div *ngIf="data | async as myData">{{myData.id}}</div>
+  <div *ngIf="data | async as myData">{{myData.title}}</div>
+
+  <h3>Observable caliente</h3>
+  <p>
+    Son aquellos que comienzan a emitir datos independientemente de si se han suscrito a ellos o no.
+    Estos observables son multicast se puede decir que el dataSource se crea y se activa fuera del observable
+  </p>
+  <button (click)="start()">Start</button>
+  <button (click)="stop()">Stop</button>
+<p>{{counter}}</p>
+
+<p>
+  Observable que es?: es un objeto que representa un flujo de datos a lo largo del tiempo, los observables
+  emiten datos a medida que cambian. Puede emitir tres tipos de evento son: next (el flujo del dato como tal),
+  error (en caso de que haya un error en el flujo) y complete (emite un evento cuando el flujo de datos se 
+  ha compeletado).
+
+  Un stream de datos es un flujo continuo de informacion que fluye a traves de un sistema puede ser usado 
+  para transmitir cualquier tipo de informacion audio, videos, datos etc.. y es el observable el que emite
+  esta informacion. 
+
+  Los observables se pueden clasificar en dos son:
+
+  Frios: son aquellos que no empiezan a emitir datos hasta que alguien se suscribe a ellos. Estos observables
+  son unicast se puede decir que el dataSource se crea y se activa dentro del observable
+  
+  Calientes: son aquellos que comienzan a emitir datos independientemente de si se han suscrito a ellos o no.
+  Estos observables son multicast se puede decir que el dataSource se crea y se activa fuera del observable
+  
+</p>
