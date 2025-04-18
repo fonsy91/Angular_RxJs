@@ -1,7 +1,7 @@
-import { CommonModule } from '@angular/common';
-import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { Component, ElementRef, Inject, inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
 import { log, timeStamp } from 'console';
-import { concat, delay, filter, interval, map, merge, Observable, of, single, startWith, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
+import { concat, delay, filter, fromEvent, interval, map, merge, Observable, of, single, startWith, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
 import { User } from '../../interfaceDatos/user.interface';
 import { BuscadorService } from '../../servicios/buscador.service';
 
@@ -39,6 +39,17 @@ export class OperadoresComponent implements OnInit, OnDestroy{
   // Observable para la demostracion del operador takeUntil
   stop$ = new Subject<number>();
   counter!: number;
+
+  // Para el operador fromEvent cuando hagamos click en el boton #myButton
+  @ViewChild('myButton',{static: true}) myButton!: ElementRef;
+
+  // CONSTRUCTOR
+  constructor(
+    @Inject(PLATFORM_ID) private platformId: Object
+  ){
+    
+  }
+  
 
   ngOnInit(): void {
     this.subscriptions.add(
@@ -103,6 +114,20 @@ export class OperadoresComponent implements OnInit, OnDestroy{
       tap(res => console.log('Operador single(): ', res))
     ).subscribe()
 
+    // Para el operador fromEvent
+    // En este caso convertirmos en un flujo de datos u observable los eventos del DOM.
+    // Cada vez que haya un click en la pantalla esto lo captara y lo mostrara por consola
+    if (isPlatformBrowser(this.platformId)) {
+      const document$ = fromEvent(this.myButton.nativeElement, 'click');
+      this.subscriptions.add(
+        document$.pipe(
+          tap(res => console.log(res))
+        ).subscribe()
+      );
+    }
+
+    
+
   }
 
   // METODOS DEL COMPONENTE ********************************************************************
@@ -145,5 +170,10 @@ results$!: Observable<User>; -> es un observable que emite un User con esto ! le
 
 private searchSVC = inject(BuscadorService); -> Este usa el nuevo método de Angular para inyección de 
 dependencias sin usar el constructor.
+
+@ViewChild('myButton', { static: true }) myButton!: ElementRef; -> 
+Busca un elemento en el HTML con una referencia local llamada #myButton
+Guarda una referencia a ese elemento DOM en la propiedad myButton
+{ static: true } significa que se inicializa en el ngOnInit, no en el ngAfterViewInit.
 
 */
