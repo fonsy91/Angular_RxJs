@@ -141,5 +141,5 @@ export class AppComponent  implements OnInit{
  * EMPEZAR VIDEO: 23
  * Importante ver datos de navegacion en angular
  * Documentacion de API rickMorty: https://rickandmortyapi.com/documentation/#character-schema
- *  
+ * Para mostrar codigo en el DOM usar la liberria que hay en el index.htlml en el head
  */

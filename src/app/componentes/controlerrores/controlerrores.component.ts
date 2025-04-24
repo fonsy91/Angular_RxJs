@@ -21,7 +21,8 @@ export class ControlerroresComponent implements OnInit{
     });
   }
 
-  // Codigo a mostrar en el DOM
+  // Codigo a mostrar en el DOM *********************************************************************
+  // ************************************************************************************************
   code: string = `
   getData(): Observable&lt;Character[]&gt; { 
     return this.http.get&lt;ResponseInfoResults&gt;('https://rickandmortyapi.com/api/character').pipe(
