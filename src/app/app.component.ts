@@ -132,13 +132,7 @@ export class AppComponent  implements OnInit{
  * traves del pipe que nos permite encadenar varios operadores en una sola llamada.
  * 
  * 
- * 
- * 
- * 
- * 
- * 
  * CURSO: https://www.youtube.com/watch?v=EVF1xnDWlV4&list=PL_9MDdjVuFjEscTzZSLo6upnX1AbHj-dl&index=5
- * EMPEZAR VIDEO: 23
  * Importante ver datos de navegacion en angular
  * Documentacion de API rickMorty: https://rickandmortyapi.com/documentation/#character-schema
  * Para mostrar codigo en el DOM usar la liberria que hay en el index.htlml en el head
