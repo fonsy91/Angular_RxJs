@@ -1,10 +1,8 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, inject, OnDestroy, OnInit, PLATFORM_ID, ViewChild } from '@angular/core';
-import { log, timeStamp } from 'console';
-import { BehaviorSubject, concat, concatWith, delay, filter, fromEvent, interval, map, merge, Observable, of, single, startWith, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
+import { BehaviorSubject, concat, delay, filter, fromEvent, interval, map, merge, Observable, of, single, startWith, Subject, Subscription, switchMap, takeUntil, tap, timestamp } from 'rxjs';
 import { User } from '../../interfaceDatos/user.interface';
 import { BuscadorService } from '../../servicios/buscador.service';
-import { HttpClient } from '@angular/common/http';
 import { ConcatWithService } from '../../servicios/concat-with.service';
 
 @Component({

@@ -6,13 +6,14 @@ import { interval, Observable, Subscription } from 'rxjs';
 import { ObsFrioCalienteComponent } from './componentes/obs-frio-caliente/obs-frio-caliente.component';
 import { ObsSuperioresComponent } from './componentes/obs-superiores/obs-superiores.component';
 import { OperadoresComponent } from './componentes/operadores/operadores.component';
+import { ControlerroresComponent } from './componentes/controlerrores/controlerrores.component';
 
 
 @Component({
   selector: 'app-root',
   standalone: true,
   // imports: [RouterOutlet],
-  imports: [CommonModule, HttpClientModule, ObsFrioCalienteComponent, ObsSuperioresComponent, OperadoresComponent],
+  imports: [CommonModule, HttpClientModule, ObsFrioCalienteComponent, ObsSuperioresComponent, OperadoresComponent, ControlerroresComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
