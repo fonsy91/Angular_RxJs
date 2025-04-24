@@ -162,6 +162,23 @@
 </p>
 
 <h3>Diferencia entre Subject y BehaviorSubject</h3>
-<p>
-    
-</p>
+<ul>
+    <li><strong>Subject: </strong>Es un tipo especial de observable en RxJs que permite tanto suscribirse a el como emitir valores</li>
+    <li><strong>BehaviorSubject: </strong>Es un tipo especial de observable en RxJs que a diferencia de un Subject normal,
+        este siempre tiene un valor inicial y cuando un nuevo suscriptor se suscribe, inmediatamente recibe el valor mas reciente.
+    </li>
+</ul>
+
+<button (click)="mySubject.next('Hola!!')">
+    Click me! Subject
+</button>
+<!--Aqui nos suscribimos al Subject-->
+{{mySubject | async}}
+
+<br>
+
+<button (click)="myBehaviorSubject.next('Segundo valor')">
+    Click me! BehaviorSubject
+</button>
+<!--Aqui nos suscribimos al Subject-->
+{{myBehaviorSubject | async}}
