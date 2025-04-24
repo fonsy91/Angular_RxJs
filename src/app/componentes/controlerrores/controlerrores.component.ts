@@ -21,4 +21,17 @@ export class ControlerroresComponent implements OnInit{
     });
   }
 
+  // Codigo a mostrar en el DOM
+  code: string = `
+  getData(): Observable&lt;Character[]&gt; { 
+    return this.http.get&lt;ResponseInfoResults&gt;('https://rickandmortyapi.com/api/character').pipe(
+      map((res: ResponseInfoResults) =&gt; res?.results),
+      // Tratamientos del error devuelto por la API errores como 404 etc..
+      // catchError(() =&gt; of([mockCharacter]))
+      // catchError(() =&gt; throwError(() =&gt; new Error('Ups Algo a pasado')))
+      catchError(() =&gt; EMPTY)
+    );
+  }
+  `;
+
 }
