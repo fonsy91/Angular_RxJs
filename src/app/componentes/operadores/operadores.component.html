@@ -136,3 +136,32 @@
  fromEvent crea un observable que se activa cada vez que se hace click en ese boton
  y entonces nos suscribimos y hacemo un tap para mostrarlo por consola.
 </p>
+
+<h4>Operador combineLatestAll():</h4>
+<p>
+    Para entender este operador es necesario saber que hace el operador combineLatest() este operador esta
+    obsoleto pero nos viene bien para saber el funcionamiento del combineLatestAll(), entonces es un operador 
+    que combina los dos ultimos valores emitidos por varios observables y lo agrupa en un unico valor. Bueno pues
+    combineLatestAll lo que hace es agrupar de manera plana un observable de observables entonces toma un observable
+    de varios observables que le podemos pasar entonces recolecta toda la informacion de estos observables cada vez que 
+    uno de estos observables que le pasamos emite pues hay una salida. 
+</p>
+
+<h4>Operador withLatestFrom():</h4>
+<p>
+    Es un operador que combina el valor mas recientemente emitido de un observable principal con el valor mas
+    recientemente emitido de uno o varios observables secundarios. Es util para combinar varios flujos y de esa 
+    manera poder generar un flujo nuevo con los datos combinados, emite solo cuando el observable principal emite.
+</p>
+
+<h4>Operador concatWith():</h4>
+<p>
+    Es un operador que se utiliza para concatenar dos o mas observables, toma uno o mas observables como argumentos 
+    y devuelve un nuevo observable que emite los valores de los observables de manera secuencial, es decir, espera
+    a que el observable anterior se complete antes de empezar a emitir los valores del siguiente observable.
+</p>
+
+<h3>Diferencia entre Subject y BehaviorSubject</h3>
+<p>
+    
+</p>
